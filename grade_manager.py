@@ -24,9 +24,13 @@ def main():
         "김민준": [92, 88, 95],
         "李华": [78, 85, 80],
         "Alex": [65, 59, 70],
+        "Tom": [],
     }
     print(f"{'姓名/이름':<10}{'平均/평균':>10}{'等级/등급':>10}")
     for name, scores in students.items():
+        if not scores:
+            print(f"{name:<10}{'N/A':>10}{'N/A':>10}")
+            continue
         avg = average(scores)
         print(f"{name:<10}{avg:>10.1f}{grade(avg):>10}")
 
